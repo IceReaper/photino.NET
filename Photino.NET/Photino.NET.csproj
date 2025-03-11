@@ -33,7 +33,12 @@
 	</Target>
 
   <ItemGroup>
-    <PackageReference Include="Photino.Native" Version="4.0.22" />
+      <ProjectReference Include="..\..\photino.Native\Photino.Native\Photino.Native.vcxproj" />
   </ItemGroup>
-
+    
+    <ItemGroup>
+        <None Include="..\..\photino.Native\Photino.Native\x64\Debug\Photino.Native.dll" CopyToOutputDirectory="PreserveNewest" Condition="'$(Configuration)'=='Debug'" />
+        <None Include="..\..\photino.Native\Photino.Native\x64\Release\Photino.Native.dll" CopyToOutputDirectory="PreserveNewest" Condition="'$(Configuration)'=='Release'" />
+    </ItemGroup>
+    
 </Project>
